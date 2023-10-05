@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AziendaSpedizioniApp.Models.AggiornamentoSpedizioni>
+
+@{
+    ViewBag.Title = "AggiornamentoSped";
+}
+
+<h2>Stato Spedizioni</h2>
+<hr />
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdAggiornamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Luogo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAggiornamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdAggiornamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSpedizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luogo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAggiornamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+@*<p>
+    @Html.ActionLink("Crea Stato", "Create", "", new { @class = "btn btn-danger" })
+</p>*@

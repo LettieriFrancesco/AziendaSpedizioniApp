@@ -1,0 +1,82 @@
+﻿@model IEnumerable<AziendaSpedizioniApp.Models.Spedizione>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sezione Spedizioni</h2>
+
+<p>
+    @Html.ActionLink("Nuova Spedizione", "Create", "Spedizioni", new {@class= "btn btn-danger"})
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CittaDestinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirizzoDestinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NominativoDestinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataConsegna)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSpedizione)
+        </td>
+        <td>
+            @AziendaSpedizioniApp.Models.DB.getClienteById(item.IdCliente).Nome
+            @AziendaSpedizioniApp.Models.DB.getClienteById(item.IdCliente).Cognome
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataSpedizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CittaDestinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoDestinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NominativoDestinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataConsegna)
+        </td>
+        <td>
+            @Html.ActionLink("Modifica", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Elimina", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AziendaSpedizioniApp.Models.Cliente>
+
+@{
+    ViewBag.Title = "RecuperoClienti";
+}
+
+<h2>Anagrafe Clienti Registrati</h2>
+
+<p>
+    @Html.ActionLink("Registra Cliente", "Create", "Clienti", new {@class= "btn btn-danger"})
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodiceFiscale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartitaIva)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cognome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodiceFiscale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartitaIva)
+        </td>
+        <td>
+            @Html.ActionLink("Modifica", "Edit", new { id=item.Id },new {@class="text-warning"}) |
+            @*@Html.ActionLink("Dettagli", "Details", new { id=item.Id }) |*@
+            @Html.ActionLink("Elimina", "Delete", new { id=item.Id }, new { @class = "text-danger" })
+        </td>
+    </tr>
+}
+
+</table>

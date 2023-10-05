@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    int widthIcon = 150;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="text-center text-danger mb-5">Pannello Amministratori</h3>
+        <hr />
+        <div class="col-3 d-flex">
+            <a class="text-decoration-none" href="/Spedizioni/Index">
+                <img style="width:@(widthIcon)px;" src="~/Content/ImgProgetto/IconListaSpedizioni.png" />
+                <p class="text-center text-danger">Lista Spedizioni</p>
+            </a>
+        </div>
+        <div class="col-3 d-flex">
+            <a class="text-decoration-none" href="/Spedizioni/Create">
+                <img style="width:@(widthIcon)px;" src="~/Content/ImgProgetto/CreaSpedizione.png" />
+                <p class="text-center text-danger text-decoration-none">Crea Spedizione</p>
+            </a>
+        </div>
+        <div class="col-3 d-flex">
+            <a class="text-decoration-none" href="/Clienti/Create">
+                <img style="width:@(widthIcon)px;" src="~/Content/ImgProgetto/NuovoClienteIcon.png" />
+                <p class="text-center text-danger text-decoration-none">Crea Cliente</p>
+            </a>
+        </div>
+        <div class="col-3 d-flex">
+            <a class="text-decoration-none" href="/Clienti/RecuperoClienti">
+                <img style="width:@(widthIcon)px;" src="~/Content/ImgProgetto/ClientiRegistrati.png" />
+                <p class="text-center text-danger text-decoration-none">Clienti Registrati</p>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center mt-2">
+            <a class="text-decoration-none" href="/Spedizioni/AggiornamentoSped">
+                <img style="width:@(widthIcon)px;" src="~/Content/ImgProgetto/brtimghome.png" />
+                <p class="text-center text-danger text-decoration-none">Stato Spedizioni</p>
+            </a>
+        </div>
+    </div>
+</div>
